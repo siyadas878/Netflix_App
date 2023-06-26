@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'NetFlix',
       theme:
       ThemeData(
+        appBarTheme: AppBarTheme(backgroundColor: Colors.transparent),
         primarySwatch: Colors.blue,
         // ignore: deprecated_member_use
         backgroundColor: Colors.black,
