@@ -5,6 +5,7 @@ import 'package:netflix/Presentation/Search/widgets/search_result.dart';
 import 'package:netflix/core/contants.dart';
 
 const imgUrl='https://www.themoviedb.org/t/p/w355_and_h200_multi_faces/1V4SPkV3bQvl85zK4FqwTzdfBs4.jpg';
+const imgUrl2="https://www.themoviedb.org/t/p/w220_and_h330_face/ygO9lowFMXWymATCrhoQXd6gCEh.jpg";
 
 class ScreenSearch extends StatelessWidget {
   const ScreenSearch({super.key});

@@ -13,13 +13,14 @@ class SearchIdl extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SearchTitle(title: 'Top Search'),
+        kheight,
         Expanded(child: 
         ListView.separated(
           shrinkWrap: true,
           itemBuilder: (context, index) {
           return const TopSearchTile();
         }, 
-        separatorBuilder: (context, index) => kwidth20, 
+        separatorBuilder: (context, index) => kheight,
         itemCount: 10))
       ],
     );
@@ -34,27 +35,24 @@ class TopSearchTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth= MediaQuery.of(context).size.width;
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        children: [
-          Container(
-           width: screenWidth * 0.4,
-           height: 100,
-           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(4),
-            image: DecorationImage(
-              image: NetworkImage(imgUrl),
-              fit: BoxFit.cover,
-              )
-           ),
-          ),
-          kwidth5,
-          Expanded(child: Text('Movie Name',
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),)),
-          Icon(Icons.play_circle_outline,color: kwhite,size: 45,)
-        ],
-      ),
+    return Row(
+      children: [
+        Container(
+         width: screenWidth * 0.4,
+         height: 100,
+         decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4),
+          image: DecorationImage(
+            image: NetworkImage(imgUrl),
+            fit: BoxFit.cover,
+            )
+         ),
+        ),
+        kwidth5,
+        Expanded(child: Text('Movie Name',
+        style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),)),
+        Icon(Icons.play_circle_outline,color: kwhite,size: 45,)
+      ],
     );
   }
 }
