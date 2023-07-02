@@ -23,8 +23,7 @@ class ComingSoon extends StatelessWidget {
             height: 450,
             child: Column(
               children: [
-                Text('FEB',
-                    style: TextStyle(fontSize: 12, color: Colors.grey)),
+                Text('FEB', style: TextStyle(fontSize: 12, color: Colors.grey)),
                 Text('11',
                     style: TextStyle(
                         fontSize: 23,
@@ -36,7 +35,8 @@ class ComingSoon extends StatelessWidget {
           SizedBox(
               width: size.width - 60,
               height: 450,
-              child: Column(mainAxisAlignment: MainAxisAlignment.start,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
@@ -71,39 +71,52 @@ class ComingSoon extends StatelessWidget {
                           ],
                         ),
                         kheight,
-                      const  Row(
+                        const Row(
                           children: [
                             Text('TALL GIRL 2',
                                 style: TextStyle(
                                     fontSize: 40,
                                     fontWeight: FontWeight.bold,
                                     letterSpacing: -7)),
-                                    Spacer(),
-                          TextIcon(icon: CupertinoIcons.bell_solid, title: 'Reminder'),
-                          kwidth,
-                          TextIcon(icon: CupertinoIcons.info, title: 'Info'),
-                          kwidth
+                            Spacer(),
+                            TextIcon(
+                                icon: CupertinoIcons.bell_solid,
+                                title: 'Reminder'),
+                            kwidth,
+                            TextIcon(icon: CupertinoIcons.info, title: 'Info'),
+                            kwidth
                           ],
                         )
                       ],
                     ),
                   ),
-                 const Text('Coming On Friday'),
+                  const Text('Coming On Friday'),
                   kheight20,
-                 const Row(
-                    children: [Text('N',style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold),),
-                    Text(' Filims',style: TextStyle(color: Colors.grey),)],
+                  const Row(
+                    children: [
+                      Text(
+                        'N',
+                        style: TextStyle(
+                            color: Colors.red, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        ' Filims',
+                        style: TextStyle(color: Colors.grey),
+                      )
+                    ],
                   ),
-                 const Text('Tall Girl 2',
-                  style: TextStyle(
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 2),),
-                                    kheight10,
-                 const Text('Leading the lead in the school musical is a\ndream come true for Jodi, until the pressure\nsends her confidence - and her relationship ---\ninto a tailspin.',
-                  style: TextStyle(
-                    fontSize: 11.7,color: Colors.grey
-                  ),),
+                  const Text(
+                    'Tall Girl 2',
+                    style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 2),
+                  ),
+                  kheight10,
+                  const Text(
+                    'Leading the lead in the school musical is a\ndream come true for Jodi, until the pressure\nsends her confidence - and her relationship ---\ninto a tailspin.',
+                    style: TextStyle(fontSize: 11.7, color: Colors.grey),
+                  ),
                 ],
               )),
         ],

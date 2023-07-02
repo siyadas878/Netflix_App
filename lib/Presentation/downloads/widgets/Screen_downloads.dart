@@ -1,6 +1,6 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:netflix/Domain/models/popular_result_model/popular_function.dart';
 import 'package:netflix/Presentation/widgets/app_bar.dart';
 import 'package:netflix/core/contants.dart';
 
@@ -22,23 +22,18 @@ class ScreenDownloads extends StatelessWidget {
         body: ListView.separated(
           padding: EdgeInsets.all(10),
           itemBuilder: (context, index) {
-          return WidgetList[index];
-        },
-        itemCount: WidgetList.length,
-        separatorBuilder: (context, index) => SizedBox(height: 20,),
-          
+            return WidgetList[index];
+          },
+          itemCount: WidgetList.length,
+          separatorBuilder: (context, index) => SizedBox(
+            height: 20,
+          ),
         ));
   }
 }
 
 class Section2 extends StatelessWidget {
   Section2({super.key});
-
-  final List imageList = [
-    "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
-    "https://www.themoviedb.org/t/p/w220_and_h330_face/8OkmwdxCZOVxvZq9OyDrIIKEoDK.jpg",
-    "https://www.themoviedb.org/t/p/w220_and_h330_face/6GyzbZf1MsXfrDWTnNXrzwr6G9q.jpg"
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -63,31 +58,40 @@ class Section2 extends StatelessWidget {
           height: size.height * 0.5,
           width: size.width,
           color: Kblack,
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              CircleAvatar(
-                radius: 130,
-                backgroundColor: Colors.grey.withOpacity(0.5),
-              ),
-              DownloadsImage(
-                margin: const EdgeInsets.only(right: 150, bottom: 20),
-                imageList: imageList[1],
-                angle: -8,
-                size: Size(size.width * 0.34, size.width * 0.55),
-              ),
-              DownloadsImage(
-                margin: const EdgeInsets.only(left: 150, bottom: 20),
-                imageList: imageList[2],
-                angle: 8,
-                size: Size(size.width * 0.34, size.width * 0.55),
-              ),
-              DownloadsImage(
-                margin: const EdgeInsets.only(right: 0),
-                imageList: imageList[0],
-                size: Size(size.width * 0.39, size.width * 0.59),
-              )
-            ],
+          child: FutureBuilder(
+            future: getImagePopular(),
+            builder: (context, snapshot) {
+              // String? imagepath = snapshot.data?[18].posterPath;
+              return Stack(
+                alignment: Alignment.center,
+                children: [
+                  CircleAvatar(
+                    radius: 130,
+                    backgroundColor: Colors.grey.withOpacity(0.5),
+                  ),
+                  DownloadsImage(
+                    margin: const EdgeInsets.only(right: 150, bottom: 20),
+                    imageList:
+                        'https://image.tmdb.org/t/p/w200${snapshot.data?[3].posterPath}',
+                    angle: -8,
+                    size: Size(size.width * 0.34, size.width * 0.55),
+                  ),
+                  DownloadsImage(
+                    margin: const EdgeInsets.only(left: 150, bottom: 20),
+                    imageList:
+                        'https://image.tmdb.org/t/p/w200${snapshot.data?[11].posterPath}',
+                    angle: 8,
+                    size: Size(size.width * 0.34, size.width * 0.55),
+                  ),
+                  DownloadsImage(
+                    margin: const EdgeInsets.only(right: 0),
+                    imageList:
+                        'https://image.tmdb.org/t/p/w200${snapshot.data?[19].posterPath}',
+                    size: Size(size.width * 0.39, size.width * 0.59),
+                  )
+                ],
+              );
+            },
           ),
         ),
       ],
@@ -103,22 +107,25 @@ class Section3 extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(left:20 ,right: 20),
+          padding: const EdgeInsets.only(left: 20, right: 20),
           child: MaterialButton(
             minWidth: double.infinity,
             onPressed: () {},
             color: kbuttonBlue,
             child: const Text(
               'Set Up',
-              style: TextStyle(color: kwhite,fontSize: 18,fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  color: kwhite, fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ),
         ),
         MaterialButton(
           onPressed: () {},
           color: kbuttonWhite,
-          child: const Text('See what you can download',
-          style: TextStyle(fontWeight: FontWeight.bold),),
+          child: const Text(
+            'See what you can download',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
         )
       ],
     );

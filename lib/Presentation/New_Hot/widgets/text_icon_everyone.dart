@@ -8,7 +8,6 @@ class TextIconEveryOne extends StatelessWidget {
   const TextIconEveryOne({
     required this.icon,
     required this.title,
-    
     super.key,
   });
 

@@ -8,7 +8,7 @@ import 'package:netflix/Presentation/main_page/widgets/bottom_Navigation.dart';
 import 'package:netflix/core/colors/colors.dart';
 
 class ScreenMainPage extends StatelessWidget {
-   ScreenMainPage({super.key});
+  ScreenMainPage({super.key});
 
   final pages = [
     ScreenHome(),
@@ -27,7 +27,7 @@ class ScreenMainPage extends StatelessWidget {
           return pages[index];
         },
       ),
-      bottomNavigationBar:const BottomNavigation(),
+      bottomNavigationBar: const BottomNavigation(),
     );
   }
 }

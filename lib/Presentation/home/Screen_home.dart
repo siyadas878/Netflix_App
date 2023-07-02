@@ -39,53 +39,14 @@ class ScreenHome extends StatelessWidget {
                         kheight,
                         Column(
                           children: [
-                            const MainTitleCard(
-                              imageName:
-                                  'https://www.themoviedb.org/t/p/w220_and_h330_face/sQleNHhKl32QFnSlahb5IHDWcDq.jpg',
-                              title: 'Released in the past',
-                            ),
+                            Released(),
                             kheight,
-                            const MainTitleCard(
-                              imageName:
-                                  'https://www.themoviedb.org/t/p/w220_and_h330_face/KoYWXbnYuS3b0GyQPkbuexlVK9.jpg',
-                              title: 'Trending now',
-                            ),
+                            Trending(),
                             kheight,
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const MainTitle(
-                                    title: 'Top 10 TV Shows In India Today'),
-                                kheight,
-                                LimitedBox(
-                                  maxHeight: 200,
-                                  child: ListView(
-                                    shrinkWrap: true,
-                                    scrollDirection: Axis.horizontal,
-                                    children: List.generate(7, (index) {
-                                      return Padding(
-                                        padding:
-                                            const EdgeInsets.only(right: 8),
-                                        child: NumberCard(
-                                          index: index,
-                                        ),
-                                      );
-                                    }),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const MainTitleCard(
-                              imageName:
-                                  'https://www.themoviedb.org/t/p/w220_and_h330_face/nygOUcBKPHFTbxsYRFZVePqgPK6.jpg',
-                              title: 'Tense Dramas',
-                            ),
+                            NumberCard(),
+                            Dramas(),
                             kheight,
-                            const MainTitleCard(
-                              imageName:
-                                  'https://www.themoviedb.org/t/p/w220_and_h330_face/d63qz4XeNtbpDC5c70AlSUIbnTQ.jpg',
-                              title: 'South Indian Cinemas',
-                            ),
+                            SouthIndian()
                           ],
                         ),
                       ],
@@ -123,12 +84,26 @@ class ScreenHome extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  Text('TV Shows',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14),),
-                                  Text('Movies',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14)),
-                                  Text('Categories',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14)),
-                              ],)
+                                  Text(
+                                    'TV Shows',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 14),
+                                  ),
+                                  Text('Movies',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14)),
+                                  Text('Categories',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 14)),
+                                ],
+                              )
                             ],
                           ),
                         ),
