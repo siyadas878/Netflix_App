@@ -42,13 +42,13 @@ class ScreenSearch extends StatelessWidget {
                      getimageSearchGrid(value.trim());
                      searchScreenNotifier.notifyListeners();
                   },
-                  style: TextStyle(color: Colors.white),
+                  style:const TextStyle(color: Colors.white),
                   backgroundColor: Colors.grey.withOpacity(0.4),
-                  prefixIcon: Icon(
+                  prefixIcon:const Icon(
                     CupertinoIcons.search,
                     color: Colors.grey,
                   ),
-                  suffixIcon: Icon(
+                  suffixIcon:const Icon(
                     CupertinoIcons.xmark_circle_fill,
                     color: Colors.grey,
                   ),
@@ -58,8 +58,8 @@ class ScreenSearch extends StatelessWidget {
                 ),
                 kheight,
                 (searchControllor.text.isEmpty)?
-                Expanded(child: SearchIdl()):
-                Expanded(child: SearchResult()),
+                const Expanded(child: SearchIdl()):
+                const Expanded(child: SearchResult()),
               ],
             );
             }, 

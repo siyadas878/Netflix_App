@@ -41,9 +41,7 @@ class _ScreenFastLaughState extends State<ScreenFastLaugh> {
       body: SafeArea(
         child: PageView(
           scrollDirection: Axis.vertical,
-          children: List.generate(
-            videoPathList.length,
-            (index) {
+          children: List.generate(videoPathList.length, (index) {
             return Stack(
               children: [
                 SizedBox(

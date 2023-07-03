@@ -3,7 +3,6 @@ import 'package:flutter/rendering.dart';
 import 'package:netflix/Presentation/home/widgets/number_cards.dart';
 import 'package:netflix/Presentation/widgets/background_card.dart';
 import 'package:netflix/core/contants.dart';
-import '../widgets/main_title.dart';
 import '../widgets/main_title_card.dart';
 
 ValueNotifier<bool> scrollNotifier = ValueNotifier(true);
@@ -34,7 +33,7 @@ class ScreenHome extends StatelessWidget {
                 child: Stack(
                   children: [
                     ListView(
-                      children: [
+                      children: const [
                         BackgroundCard(),
                         kheight,
                         Column(
@@ -70,8 +69,8 @@ class ScreenHome extends StatelessWidget {
                                     width: 60,
                                     height: 60,
                                   ),
-                                  Spacer(),
-                                  Icon(
+                                  const Spacer(),
+                                  const Icon(
                                     Icons.cast,
                                     color: Colors.white,
                                     size: 30,
@@ -84,7 +83,7 @@ class ScreenHome extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              Row(
+                              const Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: [

@@ -20,12 +20,12 @@ class ScreenDownloads extends StatelessWidget {
               title: 'Downloads',
             ))),
         body: ListView.separated(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           itemBuilder: (context, index) {
             return WidgetList[index];
           },
           itemCount: WidgetList.length,
-          separatorBuilder: (context, index) => SizedBox(
+          separatorBuilder: (context, index) => const SizedBox(
             height: 20,
           ),
         ));
@@ -33,7 +33,7 @@ class ScreenDownloads extends StatelessWidget {
 }
 
 class Section2 extends StatelessWidget {
-  Section2({super.key});
+  const Section2({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netflix/Domain/models/latest_model/latest_function.dart';
-import 'package:netflix/Domain/models/search_model/search_function.dart';
 import 'package:netflix/Domain/models/trending/trending_function.dart';
-import 'package:netflix/Domain/models/upcoming/upcoming_function.dart';
 import 'package:netflix/Presentation/Search/Screen_search.dart';
 import 'package:netflix/Presentation/Search/widgets/title.dart';
 import '../../../core/contants.dart';
@@ -44,17 +41,17 @@ class SearchIdl extends StatelessWidget {
                             Expanded(
                                 child: Text(
                               '${snapshot.data?[index].title}',
-                              style: TextStyle(
+                              style:const TextStyle(
                                   fontSize: 15, fontWeight: FontWeight.bold),
                             )),
-                            Icon(
+                           const Icon(
                               Icons.play_circle_outline,
                               color: kwhite,
                               size: 45,
                             )
                           ],
                         )
-                      : Center(
+                      :const Center(
                           child: CircularProgressIndicator(
                             color: Colors.red,
                           ),
@@ -84,18 +81,18 @@ class TopSearchTile extends StatelessWidget {
           height: 100,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(4),
-              image: DecorationImage(
+              image: const DecorationImage(
                 image: NetworkImage(imgUrl),
                 fit: BoxFit.cover,
               )),
         ),
         kwidth5,
-        Expanded(
+        const Expanded(
             child: Text(
           'Movie Name',
           style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
         )),
-        Icon(
+        const Icon(
           Icons.play_circle_outline,
           color: kwhite,
           size: 45,
